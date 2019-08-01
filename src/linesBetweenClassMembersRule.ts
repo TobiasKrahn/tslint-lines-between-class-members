@@ -89,7 +89,9 @@ class LinesBetweenClassMembersWalker extends Lint.RuleWalker {
     let whitespace = '';
     const lineStart = getNodeLineStart(node, sourceFile);
     if (lineStart !== start) {
-      whitespace = Array(start - lineStart).fill(' ').join('');
+      const fullStart = node.getFullStart();
+      const fullText = node.getFullText();
+      whitespace = fullText.substr(lineStart - fullStart, start - lineStart);
       width += start - lineStart;
       start = lineStart;
     }

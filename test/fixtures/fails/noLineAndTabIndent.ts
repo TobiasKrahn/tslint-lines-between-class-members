@@ -1,0 +1,4 @@
+class NoLineAndTabIndent {
+	constructor() { }
+	method() { }
+}

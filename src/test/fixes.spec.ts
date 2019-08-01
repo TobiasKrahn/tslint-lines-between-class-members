@@ -60,3 +60,8 @@ test('fixes 0 lines specified and 1 line difference', (t: AssertContext) => {
   const fixed = TestHelpers.fix('fails/zeroLinesOneNewLine.ts', 'tslint-num-lines-0.json');
   t.is(fixed.target, fixed.actual);
 });
+
+test('fixes no line between class methods when using tab indents', (t: AssertContext) => {
+  const fixed = TestHelpers.fix('fails/noLineAndTabIndent.ts');
+  t.is(fixed.target, fixed.actual);
+});
