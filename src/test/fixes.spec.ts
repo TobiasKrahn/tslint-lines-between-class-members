@@ -61,7 +61,7 @@ test('fixes 0 lines specified and 1 line difference', (t: AssertContext) => {
   t.is(fixed.target, fixed.actual);
 });
 
-test('fixes no line between class methods when using tab indents', (t: AssertContext) => {
+test('fixes no line between class methods while using tab indentation', (t: AssertContext) => {
   const fixed = TestHelpers.fix('fails/noLineAndTabIndent.ts');
   t.is(fixed.target, fixed.actual);
 });
